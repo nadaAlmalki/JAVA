@@ -1,0 +1,176 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        Scanner input = new Scanner(System.in);
+
+        Scanner word = new Scanner(System.in);
+      /*  int sum = 0;
+        int i = 0;
+        while (i != -1) {
+            i = input.nextInt();
+            if (i == -1) {
+                break;
+            }
+            sum = sum + i;
+
+        }
+
+        System.out.print("sum= " + sum);
+
+       int length = input.nextInt();
+        int width = input.nextInt();
+        for(int x= 0; x < length; x++){
+
+            for(int y= 1; y < width; y++){
+                System.out.print("#"); }
+                System.out.println("#");
+            }
+*/
+        // Homework:
+        //Q1:
+        System.out.println("The Question#1");
+        for (int j = 0; j <= 100; j++) {
+
+            if (j % 3 == 0 && j % 5 == 0)
+                System.out.println("FizzBuzz");
+
+            else if (j % 5 == 0)
+                System.out.println("Buzz");
+
+            else if (j % 3 == 0)
+                System.out.println("Fizz");
+            else
+                System.out.println(j);
+        }
+        //Q2:
+       System.out.println("The Question#2");
+        String sen= "The quick brown fox";
+        String str="";
+        for (int s= sen.length()-1; s>=0; s--)
+        {
+            str= str + sen.charAt(s);
+
+        }
+        System.out.println(str);
+
+        //Q3:
+        System.out.println("The Question#3");
+        System.out.println("Please enter positive number");
+        int num = input.nextInt();
+        if (num > 0) {
+            for (int n = 0; n <= 10; n++)
+                System.out.println(num + " * " + n + " = " + num * n);
+        }
+
+
+        //Q4:
+        System.out.println("The Question#4");
+        System.out.println("Please enter positive number");
+        int num2 = input.nextInt();
+        int f = 1;
+
+        for (int n = 1; n <= num2; n++)
+            f = f * n;
+        System.out.println("the factorial value of the number is " + num2 + " = " + f);
+
+        //Q5:
+        System.out.println("The Question#5");
+        int n1 = input.nextInt();
+        int n2 = input.nextInt();
+        int power = 1;
+        if (n2 != 0) {
+            for (int i = 1; i <= n2; i++) {
+                power = power * n1;
+            }
+            System.out.println("The output is: " + power);
+        }
+
+        //Q#6:
+        System.out.println("The Question#6");
+        int number = input.nextInt();
+        int sum_even = 0;
+        int sum_odd = 0;
+        for (int v = 1; v <= number; v++) {
+            if (v % 2 == 0) {
+                sum_even = sum_even + v;
+            } else
+                sum_odd = sum_odd + v;
+        }
+        System.out.println("The total of even numbers = " + sum_even);
+        System.out.println("The total of odd numbers = " + sum_odd);
+
+        //Q#7:
+        System.out.println("The Question#7");
+        int prime_num = input.nextInt();
+        int pn;
+        boolean prime = true;
+        for (int i = 2; i <= prime_num / 2; i++) {
+            pn = prime_num % i;
+            if (pn == 0) {
+                prime = false;
+                break;
+            }
+        }
+
+        if (prime)
+            System.out.println(prime_num + " yes prime number");
+        else
+            System.out.println(prime_num + " NOT prime number");
+
+        //Q#8:
+        System.out.println("The Question#8");
+        int pos = 0;
+        int neg = 0;
+        int zero = 0;
+        int[] arr_numbers = new int[10];
+
+        for (int arr = 0; arr < 10; arr++) {
+            arr_numbers[arr] = input.nextInt();
+        }
+        for (int ns = 0; ns < 10; ns++) {
+            if (arr_numbers[ns] > 0) {
+                pos++;
+            } else if (arr_numbers[ns] < 0) {
+                neg++;
+            } else {
+                zero++;
+            }
+        }
+        System.out.println("The count of positive number = " + pos);
+
+        System.out.println("The count of negative  number = " + neg);
+        System.out.println("The count of zero = " + zero);
+
+        //Q#9:
+        System.out.println("The Question#9");
+        int week, day ;
+
+        for (week = 1; week <= 4; week++){
+            System.out.println("Week  " + week);
+            for (day = 1; day <= 7; day++){
+                        ;
+            System.out.println("Day  " + day);}
+
+    }
+        //Q#10:
+        System.out.println("The Question#10");
+        String words = word.nextLine();
+        String str2="";
+
+        for ( int i = words.length()-1; i >= 0; i-- )
+            str2 = str2 + words.charAt(i);
+        if (words.equals(str2))
+            System.out.println("The word is palindrome ");
+        else
+            System.out.println("The word is NOT palindrome ");
+
+
+    }}
+
+
+
+
+
