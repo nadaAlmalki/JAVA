@@ -1,0 +1,232 @@
+Scanner input = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Hello world!");
+        //Day4
+        //Homework:
+        //Q1:
+        System.out.println("The Question#1 ");
+        int[] array1 = {50, -20, 0, 30, 40, 60, 10, 10};
+        System.out.println(Arrays.toString(array1));
+        boolean flag;
+        int fnum = array1[0];
+        int lnum = array1[array1.length - 1];
+        if (fnum == lnum)
+            flag = true;
+        else
+            flag = false;
+        System.out.println(flag);
+
+
+        //Q2:
+        System.out.println("The Question#2 ");
+        int k = 3;
+        Integer[] array2 = {1, 4, 17, 7, 25, 3, 100};
+
+        System.out.print(k + "  largest elements of the said array are: ");
+        Arrays.sort(array2);
+        Arrays.sort(array2, Collections.reverseOrder());
+        for (int i = 0; i < k; i++)
+            System.out.print(array2[i] + " ");
+
+        System.out.println("");
+        //Q3:
+        System.out.println("The Question#3 ");
+        Integer[] array3 = {1, 4, 17, 7, 25, 3, 100};
+        System.out.println(Arrays.toString(array3));
+        int sum = 0;
+        int avg = 0;
+        for (int i = 0; i < array3.length; i++)
+            sum += array3[i];
+        avg = sum / array3.length;
+        System.out.print(" The average of the said array is: " + avg + ",  ");
+        Arrays.sort(array3, Collections.reverseOrder());
+
+        for (int j = 0; j < array3.length; j++)
+            if (array3[j] > avg)
+                System.out.println("The numbers in the said array that are greater than the average are: " + array3[j]);
+        //Q4:
+        System.out.println("The Question#4 ");
+        int[] array4 = {20, 30, 40};
+        int largnum = 0;
+        int firstnum = array4[0];
+        int lastnum = array4[array4.length - 1];
+        System.out.println("The first number of array:  " + firstnum);
+        System.out.println("The last number of array:  " + lastnum);
+        if (firstnum > lastnum) {
+            largnum = firstnum;
+            System.out.println("Larger value between first and last element: " + largnum);
+        } else
+            System.out.println("Larger value between first and last element: " + lastnum);
+
+        //Q5:
+        System.out.println("The Question#5 ");
+        Integer[] array5 = {20, 30, 40};
+        System.out.println(" Old Array:  " + Arrays.toString(array5));
+        int first_num = array5[0];
+        int last_num = array5[array5.length - 1];
+        array5[0] = last_num;
+        array5[array5.length - 1] = first_num;
+        System.out.println("New array after swapping the first and last elements: " + Arrays.toString(array5));
+
+        //Q6:
+        System.out.println("The Question#6 ");
+        String[] array6 = {"cat", "dog", "red", "is", "am"};
+        System.out.println(Array_words.longest_words(array6));
+
+
+        //Q7:
+        System.out.println("The Question#7 ");
+        int size;
+        //Scanner input = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
+        System.out.print("Enter Array size: ");
+        size = input.nextInt();
+        int[] list = new int[size];
+
+        char option;
+
+        do
+        {
+            System.out.println("Menu ");
+            System.out.println("A. Enter array elements");
+            System.out.println("B.  Display elements of an array ");
+            System.out.println("C. Search the element within array");
+            System.out.println("D. Sort the array");
+            System.out.print("Select an Option : ");
+            String str = scan.nextLine();
+            option = str.charAt(0);
+
+            switch (option)
+            {
+                case 'A':
+                    readArray(list);
+                    break;
+                case 'B':
+                    displayArray(list);
+                    break;
+                case 'C':
+                    System.out.print("Enter the number you want to search: ");
+                    int item = input.nextInt();
+                    int index = searchArray(list, item);
+                    if (index == -1)
+                    {
+                        System.out.println("Number is NOT Exist");
+                    }
+                    else
+                    {
+                        System.out.println("Number Index " + (index + 1));
+                    }
+                    break;
+                case 'D':
+                    System.out.println("Sorted Array :");
+                    sortArray(list);
+                    displayArray(list);
+                default:
+                    System.out.println(" ");
+            }
+        } while (option != 'A' ||option != 'C'||option != 'D');
+    }
+
+    static void readArray(int[] array)
+    {Scanner input = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = input.nextInt();
+        }
+    }
+
+    static void displayArray(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    static int searchArray(int[] array, int data)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            if(array[i] == data)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    static void sortArray(int[] array)
+    {
+        for (int i = 0; i < array.length - 1; i++)
+        {
+            for(int j = 0; j < array.length -i-1; j++)
+            {
+                if(array[j] > array[j+1])
+                {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+
+   //Q8:
+        System.out.println("The Question#8 ");
+        Scanner input = new Scanner(System.in);
+        int size, item, count = 0, i = 0;
+        System.out.print("Please enter size of the array :");
+        size = input.nextInt();
+        int arr[] = new int[size];
+        System.out.println("Enter array elements:");
+        for (i = 0; i < size; i++) {
+            arr[i] = input.nextInt();
+        }
+
+        item = input.nextInt();
+        for (i = 0; i < size; i++) {
+            if (arr[i] == item) {
+                count++;
+            }
+        }
+        System.out.println("occurs " + count + " time ");
+
+
+        //Q9:
+        System.out.println("The Question#9 ");
+        int[] array = {2, 3, 40, 1, 5, 9, 4, 10, 7};
+        int[] size2 = new int[array.length];
+        System.out.println("Old array: " + Arrays.toString(array));
+        for (int ii = 0, odd = 0, even = array.length - 1; ii < array.length; ii++) {
+            if (array[ii] % 2 != 0) {
+                size2[odd] = array[ii];
+                odd++;
+            } else {
+                size2[even] = array[ii];
+                even--;
+            }
+        }
+        System.out.println("Sorted Array: " + Arrays.toString(size2));
+
+        //Q10:
+        System.out.println("The Question#10 ");
+        int[] arr1 = {2, 3, 6, 6, 4};
+        int[] arr2 = {2, 3, 6, 6, 4};
+        boolean flag = false;
+        // for(int a=0; a<arr1.length; a++){
+        //for(int aa=0; aa<arr2.length; aa++)
+        if (arr1.length == arr2.length) {
+            for (int a = 0; a < arr1.length; a++) {
+                if (arr1[i] != arr2[i])
+                    flag = false;
+                else
+                    flag = true;
+
+            }
+        }System.out.println(flag);
+
+
+    }
+}
+
+
