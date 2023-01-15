@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 public class Main {
@@ -8,13 +9,13 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             //Q7:
             System.out.println("The Question#7 ");
-            int size;
-            int[] list = new int[0];
+            int size = 4;
+            int[] list = new int[4];
             //Scanner input = new Scanner(System.in);
             //Scanner scan = new Scanner(System.in);
             // try {
             System.out.print("Enter Array size: ");
-            size = input.nextInt();
+           // size = input.nextInt();
             list = new int[size];
             // }
 
@@ -39,12 +40,13 @@ public class Main {
                         break;
                     case 'C':
                         System.out.print("Enter the number you want to search: ");
-                        int item = input.nextInt();
-                        int index = searchArray(list, item);
-                        if (index == -1) {
+                        int index = input.nextInt();
+                        int item = searchArray(list);
+                        if (index ==0 && index > 4) {
                             System.out.println("Number is NOT Exist");
                         } else {
-                            System.out.println("Number Index " + (index + 1));
+                           // index(list.length-1);
+                            System.out.println("Number is " + list[index]);
                         }
                         break;
                     case 'D':
@@ -60,7 +62,10 @@ public class Main {
 
         catch (InputMismatchException e){
             System.out.print(" ");
-         //   System.exit(0);
+            //   System.exit(0);
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.print(" ");
         }
     }
 
@@ -81,16 +86,18 @@ public class Main {
         System.out.println();
     }
 
-    static int searchArray(int[] array, int data) throws InputMismatchException
-    {
-        for (int i = 0; i < array.length; i++)
-        {
-            if(array[i] == data)
-            {
-                return i;
+    static int searchArray(int[] array) throws InputMismatchException
+    { //int index =0;
+        int i ;
+        for (i = 0; i < 4; i++)
+        { if(i == 0 && i < 4){
+            int index = (int) Array.get(array, i);
+           // i  = array[i]   ;
+                return index ;
             }
-        }
-        return -1;
+
+
+    }return 0;
     }
 
     static void sortArray(int[] array)
