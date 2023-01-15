@@ -10,7 +10,7 @@ public class Main {
                 {' ', ' ',' '},
                 {' ', ' ',' '}};
         displaymtatrix(matrix);
-        int input_num = input.nextInt();
+        int input_num = 0;
         while (true) {
             playermethod(matrix, input_num);
             if (game_over(matrix)){
