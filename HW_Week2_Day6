@@ -1,0 +1,111 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class Main {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Hello world!");
+            Scanner input = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);
+            //Q7:
+            System.out.println("The Question#7 ");
+            int size;
+            int[] list = new int[0];
+            //Scanner input = new Scanner(System.in);
+            //Scanner scan = new Scanner(System.in);
+            // try {
+            System.out.print("Enter Array size: ");
+            size = input.nextInt();
+            list = new int[size];
+            // }
+
+            char option;
+
+            do {
+                System.out.println("Menu ");
+                System.out.println("A. Enter array elements");
+                System.out.println("B.  Display elements of an array ");
+                System.out.println("C. Search the element within array");
+                System.out.println("D. Sort the array");
+                System.out.print("Select an Option : ");
+                String str = scan.nextLine();
+                option = str.charAt(0);
+
+                switch (option) {
+                    case 'A':
+                        readArray(list);
+                        break;
+                    case 'B':
+                        displayArray(list);
+                        break;
+                    case 'C':
+                        System.out.print("Enter the number you want to search: ");
+                        int item = input.nextInt();
+                        int index = searchArray(list, item);
+                        if (index == -1) {
+                            System.out.println("Number is NOT Exist");
+                        } else {
+                            System.out.println("Number Index " + (index + 1));
+                        }
+                        break;
+                    case 'D':
+                        System.out.println("Sorted Array :");
+                        sortArray(list);
+                        displayArray(list);
+                    default:
+                        System.out.println(" ");
+                }
+            } while (option != 'A' || option != 'C' || option != 'D');
+
+        }
+
+        catch (InputMismatchException e){
+            System.out.print(" ");
+         //   System.exit(0);
+        }
+    }
+
+    static void readArray(int[] array)
+    {Scanner input = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = input.nextInt();
+        }
+    }
+
+    static void displayArray(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    static int searchArray(int[] array, int data) throws InputMismatchException
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            if(array[i] == data)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    static void sortArray(int[] array)
+    {
+        for (int i = 0; i < array.length - 1; i++)
+        {
+            for(int j = 0; j < array.length -i-1; j++)
+            {
+                if(array[j] > array[j+1])
+                {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+}
