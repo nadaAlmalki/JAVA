@@ -25,7 +25,8 @@ public class DeliverySchedule{
     @Column(columnDefinition = "varchar(50) not null")
     private String Day;
 
-    @Temporal(TemporalType.TIMESTAMP)
+   
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy@HH:mm")
     @Column(columnDefinition = "DATETIME", nullable = false)
      private Date date_delivery;
 
