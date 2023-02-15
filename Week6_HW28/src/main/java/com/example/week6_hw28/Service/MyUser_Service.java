@@ -29,7 +29,7 @@ public class MyUser_Service {
 
 
     public void register(MyUser myUser){
-        myUser.setRole("User");
+       myUser.setRole("CUSTOMER");
         String hashedPassword=new BCryptPasswordEncoder().encode(myUser.getPassword());
         myUser.setPassword(hashedPassword);
         myUser_repository.save(myUser);
